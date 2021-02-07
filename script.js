@@ -75,7 +75,7 @@ function displayMealIDetails(item) {
             <li><i class="fas fa-check-square"></i> ${item.strIngredient4}</li>
             <li><i class="fas fa-check-square"></i> ${item.strIngredient5}</li>
             <li><i class="fas fa-check-square"></i> ${item.strIngredient6}</li>   
-            <li><i class="fas fa-check-square"></i> ${item.strIngredient7}</li>   
+              
         </ul>
       </div>
     `;
