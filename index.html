@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hungry Monster</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
@@ -42,7 +42,11 @@
       <div class="container">
         <div class="search-main">
           <i class="fa fa-search search-icon"></i>
-          <input type="text" placeholder="Search for Meal..." id="search-input" />
+          <input
+            type="text"
+            placeholder="Search for Meal..."
+            id="search-input"
+          />
           <button class="btn-search" id="search-btn">Search</button>
         </div>
       </div>
@@ -51,20 +55,18 @@
     <!-- Meal Items -->
     <section>
       <div class="container" id="result-area">
-        <div class="meal-items" id="meal-list">
-          
-        </div>
+        <div class="meal-items" id="meal-list"></div>
       </div>
     </section>
 
     <!-- Modal -->
     <div id="modal" class="modal">
-        <div class="container">
-          <button class="close-modal" id="close-modal">
-            <i class="fas fa-times"></i>
-          </button>
-          <div class="modal-body"></div> 
-        </div>
+      <div class="container">
+        <button class="close-modal" id="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>

@@ -48,6 +48,7 @@ function displayMealItems(items) {
       mealItems.appendChild(itemDiv);
     });
   } else {
+    
     const errMsg = document.createElement('h4');
     errMsg.classList.add('result-msg');
     errMsg.innerHTML = `Sorry ! The Item you are looking for is not Available. <br>
