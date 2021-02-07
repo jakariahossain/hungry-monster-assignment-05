@@ -3,7 +3,7 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("close-modal");
-const resultArea = document.getElementById("result-area");
+
 
 // Search Meal Items From API
 searchBtn.addEventListener("click", () => {
@@ -53,7 +53,7 @@ function displayMealItems(items) {
     errMsg.classList.add('result-msg');
     errMsg.innerHTML = `Sorry ! The Item you are looking for is not Available. <br>
     <span>Please search another item</span>`;
-    resultArea.appendChild(errMsg);
+    mealItems.appendChild(errMsg);
 
 
   }
