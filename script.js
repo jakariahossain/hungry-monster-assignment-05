@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("close-modal");
+const resultArea = document.getElementById("result-area");
 
 // Search Meal Items From API
 searchBtn.addEventListener("click", () => {
@@ -11,7 +12,7 @@ searchBtn.addEventListener("click", () => {
   searchInput.value = "";
 });
 
-// Display Meal Items From API
+// Display Meal Items By User Input
 
 function getMealItems(inputValue) {
   const fetchItem = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`;
@@ -23,6 +24,7 @@ function getMealItems(inputValue) {
     .catch((err) => console.log(err));
 }
 
+// Display Meal Item Function with Validation
 function displayMealItems(items) {
   mealItems.innerHTML = "";
   const getItem = items.meals;
@@ -46,10 +48,13 @@ function displayMealItems(items) {
       mealItems.appendChild(itemDiv);
     });
   } else {
-    mealItems.innerHTML = `
-      
-      <h4>Sorry ! The Item you are looking for is not Available. <br> Please search another item </h4>
-    `;
+    const errMsg = document.createElement('h4');
+    errMsg.classList.add('result-msg');
+    errMsg.innerHTML = `Sorry ! The Item you are looking for is not Available. <br>
+    <span>Please search another item</span>`;
+    resultArea.appendChild(errMsg);
+
+
   }
 }
 

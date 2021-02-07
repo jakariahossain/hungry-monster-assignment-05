@@ -86,9 +86,16 @@ nav ul li a {
   text-transform: uppercase;
   color: #f06c4e;
 }
-.meal-items h4{
+.result-msg{
   color: red;
   text-align: center;
+  line-height: 30px;
+  font-size: 25px;
+}
+.result-msg span{
+  color: #252525;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 .card {
   width: 270px;
@@ -124,8 +131,7 @@ nav ul li a {
   bottom: 0;
   right: 0;
   z-index: 999;
-  
-  
+ 
   
 }
 
@@ -135,6 +141,7 @@ nav ul li a {
   border-radius: 5px;
   box-shadow: 0px 1px 4px gray;
   overflow: hidden;
+  
 }
 .modal img {
   width: 100%;
