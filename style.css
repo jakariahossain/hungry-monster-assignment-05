@@ -86,6 +86,10 @@ nav ul li a {
   text-transform: uppercase;
   color: #f06c4e;
 }
+.meal-items h4{
+  color: red;
+  text-align: center;
+}
 .card {
   width: 270px;
   height: 300px;
