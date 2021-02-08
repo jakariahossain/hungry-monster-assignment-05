@@ -40,7 +40,7 @@ const displayMealItems = (items) => {
       itemDiv.classList.add("card");
       itemDiv.innerHTML = `
           <div class="card-body">
-            <img src="${item.strMealThumb}" alt="Germany" />
+            <img src="${item.strMealThumb}" alt="Meals" />
             <h2 class="item-name">${item.strMeal}</h2>
           </div>
     
