@@ -3,29 +3,35 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("close-modal");
+const errMsg = document.getElementById('err-msg');
+const dataErrMsg = document.getElementById('data-err-msg');
 
 
-// Search Meal Items From API
+// Search Meal Items, If input field not empty pass the value through function
 searchBtn.addEventListener("click", () => {
   const inputValue = searchInput.value;
-  getMealItems(inputValue);
+  if(inputValue == ""){
+    errMsg.style.display = "block";
+    dataErrMsg.style.display = "none";
+  }else{
+    errMsg.style.display = "none";
+    dataErrMsg.style.display = "none";
+    getMealItems(inputValue);
+  }
+  
   searchInput.value = "";
 });
 
-// Display Meal Items By User Input
-
-function getMealItems(inputValue) {
-  const fetchItem = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`;
-  fetch(fetchItem)
-    .then((res) => res.json())
-    .then((data) => {
-      displayMealItems(data);
-    })
-    .catch((err) => console.log(err));
+// Display Meal Items By User Input and Passing data through function
+const  getMealItems = async (inputValue) => {
+  const fetchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`;
+  const res = await fetch(fetchUrl);
+  const data = await res.json();
+  displayMealItems(data);
 }
 
 // Display Meal Item Function with Validation
-function displayMealItems(items) {
+const displayMealItems = (items) => {
   mealItems.innerHTML = "";
   const getItem = items.meals;
   if (getItem != null) {
@@ -47,20 +53,13 @@ function displayMealItems(items) {
 
       mealItems.appendChild(itemDiv);
     });
-  } else {
-    
-    const errMsg = document.createElement('h4');
-    errMsg.classList.add('result-msg');
-    errMsg.innerHTML = `Sorry ! The Item you are looking for is not Available. <br>
-    <span>Please search another item</span>`;
-    mealItems.appendChild(errMsg);
-
-
+  }else {
+    dataErrMsg.style.display = "block";
   }
 }
 
 // Modal
-function displayMealIDetails(item) {
+const displayMealIDetails = (item) => {
   const modalBody = document.querySelector(".modal-body");
   modalBody.innerHTML = `
 

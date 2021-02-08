@@ -24,7 +24,9 @@
     <header>
       <div class="container">
         <div class="logo-menu">
-          <img src="img/logo.png" alt="" />
+          <a href="index.html">
+            <img src="img/logo.png" alt="" />
+          </a>
           <nav>
             <ul>
               <li><a href="#">Home</a></li>
@@ -48,9 +50,17 @@
             id="search-input"
           />
           <button class="btn-search" id="search-btn">Search</button>
+          <br>
+          
         </div>
+        <div class="show-err-msg" id="err-msg"><i class="fas fa-exclamation-circle"></i> Oops ! Filed must not be empty </div>
+
+        <div class="data-err" id="data-err-msg"><i class="fas fa-exclamation-circle"></i> Sorry ! The Item you are looking for is not Available.
+        <br> PLEASE SEARCH ANOTHER ITEM </div>
+
       </div>
     </section>
+    
 
     <!-- Meal Items -->
     <section>

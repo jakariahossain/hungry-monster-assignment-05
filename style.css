@@ -74,6 +74,16 @@ nav ul li a {
   cursor: pointer;
 }
 
+.show-err-msg, .data-err{
+  color: rgb(224, 59, 59);
+  text-align: center;
+  display: none;
+  line-height: 28px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
 /* Meal Items */
 
 .meal-items {
